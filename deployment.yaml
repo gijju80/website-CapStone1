@@ -2,9 +2,14 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: capstoneproj2-deployment
+  labels:
+    app: capstoneproj2-deployment
 spec:
   replicas: 2
-    template:
+  selector:
+    matchLabels:
+      app: capstoneproj2-deployment
+  template:
     metadata:
       labels:
         app: capstoneproj2-deployment
